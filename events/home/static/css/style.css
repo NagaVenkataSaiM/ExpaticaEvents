@@ -65,13 +65,13 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #1e4356;
+  background: #080808;
 }
 #header.header-transparent {
   background: none;
 }
 #header.header-scrolled {
-  background: rgba(30, 67, 86, 0.8);
+  background: #080808;
   height: 60px;
 }
 #header .logo h1 {
@@ -1839,14 +1839,14 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #0b212d;
+  background: #080808;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
 }
 #footer .footer-newsletter {
   padding: 50px 0;
-  background: #0d2735;
+  background: #080808;
 }
 #footer .footer-newsletter h4 {
   font-size: 24px;
@@ -1986,3 +1986,4 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+
