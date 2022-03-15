@@ -1,0 +1,8 @@
+{% extends 'membership/base.html' %}
+{% block content %}
+<h3>Membership Details</h3>
+{% for m in members %}
+Package: {{ m.member }} <br>
+Price: {{ m.price }} <br>
+{% endfor %}
+{% endblock content %}

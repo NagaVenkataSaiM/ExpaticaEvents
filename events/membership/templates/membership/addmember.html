@@ -1,0 +1,11 @@
+{% extends 'membership/base.html' %}
+{% block content %}
+<form method = "post">
+    {% csrf_token %}
+<h4>New Member</h4>
+{{ form }}
+<br>
+<br>
+<center><button>Submit</button></center>
+</form>
+{% endblock content %}

@@ -1,4 +1,9 @@
-{% extends 'payment/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <h3>Choose Payment Options</h3>
+{% for p in payments %}
+Name: {{ p.uname }} <br>
+Account Number: {{ p.accno }} <br>
+Bank Name: {{ p.bankname }}<br>
+{% endfor %}
 {% endblock content %}
