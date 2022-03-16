@@ -7,5 +7,7 @@ class Userreg(models.Model):
     gender=models.CharField(max_length=100)
     umail=models.CharField(max_length=100)
     pwd=models.CharField(max_length=100)
+    uage=models.CharField(max_length=100)
+    upref=models.CharField(max_length=100)
     class Meta:
         db_table="newreg"

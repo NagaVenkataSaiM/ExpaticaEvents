@@ -10,13 +10,13 @@
     ></script>
     <link rel="stylesheet" href="{% static 'css/regstyles.css' %}">
     <title>Sign in & Sign up Form</title>
+
   </head>
   <body>
 
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <button onclick="window.location.href='/'" class="btn">Home</button>
           <form method="POST" action="/login" class="sign-in-form" >
             {% csrf_token %}
             <h2 class="title">Sign in</h2>
@@ -72,6 +72,17 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Confirm-Password" name="repwd" pattern="" required/>
             </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="number" placeholder="Age" name="uage" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-venus-mars"></i>
+              <select id="upref" name="upref" class="upref" required >
+                <option value="Offline">Offline</option>
+                <option value="Online">Online</option>
+              </select>
+            </div>
             <input type="submit" class="btn" value="Sign up" />
             {%if messages %}
             {%for result in messages%}
@@ -107,6 +118,7 @@
             <button class="btn transparent" id="sign-up-btn">
               Sign up
             </button>
+            <button onclick="window.location.href='/'" class="btn transparent">Home</button>
           </div>
           <img src="{% static '../img/log.svg' %}" class="image" alt="" />
         </div>

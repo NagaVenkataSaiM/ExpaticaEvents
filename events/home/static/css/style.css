@@ -1983,6 +1983,22 @@ section {
   font-size: 13px;
   color: #fff;
 }
+.stat1{
+
+  width: 500px;
+  height: 300px;
+  border-top: 1px solid rgba(34, 32, 32, 0.5);
+  border-left: 1px solid rgba(8, 8, 8, 0.5);
+  margin-top:-2rem;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-radius: 20px;
+  visibility: visible;
+  position: relative;
+  background-color: rgb(220,220,220,0.8);
+  }
 #footer .credits a {
   color: #a2cce3;
 }
