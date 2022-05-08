@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'payment',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -76,17 +77,24 @@ WSGI_APPLICATION = 'events.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nvsai',
+        'USER': 'postgres',
+        'PASSWORD':'Nvsai222',
+        'PORT':5432,
+        'HOST':'database-1.cmzqxzl046dx.us-east-1.rds.amazonaws.com'
+    }
+}"""
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mydb',
-        'USER': 'root',
-        'PASSWORD':'1142',
-        'PORT':3306,
-        'HOST':'127.0.0.1',
-        'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'USER': 'nvsai',
+        'PASSWORD' : 'Nvsai222',
+        'HOST' : '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -134,3 +142,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,  'static')
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER="nagavenkatasai246@gmail.com"
+EMAIL_HOST_PASSWORD="wymbfxrxspoyqrrt"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

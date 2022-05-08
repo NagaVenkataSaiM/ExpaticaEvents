@@ -3,11 +3,13 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib import messages
 from .models import Userreg
-import mysql.connector
+import psycopg2
 import matplotlib.pyplot as plt
 import io
 import urllib,base64
 import numpy as np
+import urllib.parse as urlparse
+import os
 # Create your views here.
 def home(request):
     return render(request,'home.html', {})
@@ -93,12 +95,26 @@ def logout(request):
 
 
 def stat(request):
-    mydb = mysql.connector.connect(host="127.0.0.1",
-                                   user="root",
-                                   password="1142",
+    """url = urlparse.urlparse(os.environ['DATABASE_URL'])
+    dbname = url.path[1:]
+    user = url.username
+    password = url.password
+    host = url.hostname
+    port = url.port"""
+    mydb = psycopg2.connect(host="127.0.0.1",
+                                   user="nvsai",
+                                   password="Nvsai222",
                                    database="mydb")
+
+    """mydb = psycopg2.connect(
+            dbname=dbname,
+            user=user,
+            password=password,
+            host=host,
+            port=port
+            )"""
     mycursor = mydb.cursor()
-    mycursor.execute("select upref from newreg")
+    mycursor.execute("select upref from home_userreg")
     result = mycursor.fetchall
 
     upref = []

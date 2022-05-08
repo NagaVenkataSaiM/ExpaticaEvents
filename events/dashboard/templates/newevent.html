@@ -1,0 +1,49 @@
+{% load static %}
+
+<title>newevent</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+<style type="text/css">
+	.hidden{
+		display: none;
+		visibility: hidden;
+	}
+</style>
+
+<div class="main">
+	<center>
+		<h1>New Event</h1>
+
+		<form method="POST">
+		{% csrf_token %}
+		<input type="text" name="eventname" placeholder="Eventname"></input>
+		<br />
+		<br />
+		<input type="text" name="eventid" placeholder="Eventid"></input>
+		<br />
+		<br />
+		<input type="text" name="eventdescription" placeholder="Description"></input>
+		<br />
+		<br />
+	     <input type="text" class="hidden" name="imgurl" id="imgurl"></input>
+		<button type="submit">Create</button>
+	     </form>
+	     <button onclick="myFun()">Upload file</button>
+		<button onclick="window.location.href='/'">Home</button>
+	</center>
+	<script type="text/javascript">
+	function myFun(){
+	const client = filestack.init("");
+	const options = {
+    onFileUploadFinished: file => {
+        // If you throw any error in this function it will reject the file selection.
+        // The error message will be displayed to the user as an alert.
+        alert(file.url)
+        document.getElementById('imgurl').value=file.url
+    }
+};
+	client.picker(options).open();
+}
+</script>
+</div>
